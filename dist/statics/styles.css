@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+}
+
+/* Header */
+header {
+    border-top: 6px solid #4894FF;
+    position: fixed;
+    width: 100%;
+}
+
+/* Main section */
+section.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+article {
+    margin-top: 150px;
+    margin-left: 94px;
+    width: 768px;
+    order: 1;
+}
+
+article p {
+    font-family: 'Georgia';
+    line-height: 27px;
+    font-size: 18px;
+    color: #333333;
+}
+
+article h1 {
+    font-size: 38.5;
+    font-family: 'Eczar';
+    line-height: 52px;
+    font-weight: 400;
+    margin-bottom: 78px;
+}
+
+/* Footer */
+footer {
+    height: 250px;
+    position: fixed;
+    width: 100%;
+    bottom: -1px;
+    padding-left: 94px;
+    box-sizing: border-box;
+    font-family: 'Lato';
+    font-size: 14px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 76%);
+}
+
+footer span.author {
+    bottom: 32px;
+    position: absolute;
+}
+
+footer span.creator {
+    position: absolute;
+    right: 50px;
+    bottom: 32px;
+    color: #8B8B8B;
+}
+
+footer a {
+    color: #8b8b8b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    font-weight: bold;
+}
+
+/* Aside bar */
+aside {
+    height: 100px;
+    order: 2;
+    width: 26px;
+    margin: 40px 30px 40px auto;
+    position: fixed;
+    right: 0;
+}
+
+aside .top {
+    background-image: url('images/top.svg');
+}
+
+aside .menu {
+    background-image: url('images/menu.svg');
+}
+
+aside .top, aside .menu {
+    height: 62px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
