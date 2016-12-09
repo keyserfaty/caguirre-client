@@ -7,3 +7,11 @@ export const redirect = (root, routes) => {
     root.innerHTML = routes[route]
   }
 }
+
+export const readBarWidth = (scrollPosition, windowHeight) => {
+  if (windowHeight > 0) {
+    return scrollPosition * 100 / windowHeight
+  } else {
+    return 0
+  }
+}

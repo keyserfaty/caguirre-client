@@ -3,23 +3,18 @@ import Post from './Post'
 import Footer from '../../common/Footer'
 import Aside from '../../common/Aside'
 
+import { readBarWidth } from '../../helpers'
+
 let header
+let d
 
 window.addEventListener('load', () => {
-  const d = document
-  header = d.querySelector('header') //* Ugly but works
+  d = document
+  header = d.querySelector('header')
 })
 
-let readBarWidth = (scrollPosition, windowHeight) => {
-  if (windowHeight > 0) {
-    return scrollPosition * 100 / windowHeight
-  } else {
-    return 0
-  }
-}
-
 window.addEventListener('scroll', () => {
-  const fullHeight = document.body.scrollHeight - document.body.clientHeight
+  const fullHeight = d.body.scrollHeight - d.body.clientHeight
   const scrollPosition = window.pageYOffset
   header.setAttribute('style', 'width: ' + readBarWidth(scrollPosition, fullHeight) + '%')
 })

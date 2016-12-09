@@ -19,6 +19,6 @@ if (location.hash === '') {
   redirect(root, routes)
 }
 
-window.addEventListener('hashchange', function (e) {
+window.addEventListener('hashchange', function () {
   redirect(root, routes)
 })
