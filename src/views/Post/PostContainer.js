@@ -19,15 +19,20 @@ window.addEventListener('scroll', () => {
   header.setAttribute('style', 'width: ' + readBarWidth(scrollPosition, fullHeight) + '%')
 })
 
-const Container = props => (
-  <span>
+const Container = props => {
+  const route = location.hash.split('/')[2]
+  const data = props.data.filter(file => file.fileName === '/' + route)[0]
+
+  return (
+    <span>
     <header />
     <section class="container">
       <Aside data=""/>
-      <Post data={props.data} />
+      <Post data={data} />
     </section>
     <Footer data=""/>
   </span>
-)
+  )
+}
 
 export default Container

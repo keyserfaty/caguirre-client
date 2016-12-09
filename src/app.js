@@ -7,7 +7,7 @@ import data from './async'
 import { redirect } from './helpers'
 
 const routes = {
-  'posts': <PostsListsContainer data='' />,
+  'posts': <PostsListsContainer data={data} />,
   'post': <PostContainer data={data} />
 }
 
