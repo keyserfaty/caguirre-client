@@ -1,6 +1,4 @@
-import h from 'vhtml'
-
-const data = {
+export const data = {
   title: 'Todos son mis hijos: detrás del guión como marioneteros invisibles',
   subtitle: '',
   content: `Son las once de la mañana y estoy frente a la computadora leyendo una página llamada Mundo bebe. Me abro paso entre fotos de querubines regordetes, chupetes animados con música y videos informativos sobre el puerperio, y repaso la última lista de nombres del día: Miguel Ángel: del hebreo, quiere decir Dios es justo; Juan Carlos: también del hebreo Yohanam, Dios es misericordioso; Alí: del árabe, el que es sublime; Santiago: del hebreo Sant Yago y significa suplantador; Nicolás: viene del griego Niké, que significa victoria, y Matías: otra vez del hebreo Mattith-Yah y significa don de Dios.
@@ -21,35 +19,3 @@ En Guapas aplicamos esta ley a rajatabla. Ninguna de las protagonistas se llama 
 
 Yo sé que la gente puede decirme que la realidad no sigue estas reglas. Que tienen una prima que se llama Nepomucena, una ahijada de dos años que se llama Graciela o un albañil llamado Wolfang arreglándole el baño de casa, pero la vida no es la ficción y la verdad y la verosimilitud son primas lejanas que son parecidas, pero nunca idénticas. Como los hijos, a los personajes uno les pone un nombre que también es un deseo. Algo que los represente, que los interpele, que sea bonito y fuerte, que les de seguridad, pero sobre todo, que los haga sentir tan únicos e inolvidables como los sentimos nosotros, que los trajimos a este mundo con tanto amor.`
 }
-
-const splittedContent = content => content.split('\n')
-
-const Post = props => {
-  const { title, content } = props.data
-  return (
-    <article>
-      <h1>{title}</h1>
-      {splittedContent(content).map(p => <p>{p}</p>)}
-    </article>
-  )
-}
-
-const Container = props => (
-  <span>
-    <header />
-    <section class="container">
-      <aside>
-        <div class="top"></div>
-        <div class="menu"></div>
-      </aside>
-      <Post data={data} />
-    </section>
-    <footer>
-      <span class="author">Por: <strong>Carolina Aguirre</strong></span>
-      <span class="creator">Creado con ❤️ por <a href="http://www.twitter.com/keyserfaty">@keyserfaty</a></span>
-    </footer>
-  </span>
-)
-
-const root = document.querySelector('.root')
-root.innerHTML = Container()

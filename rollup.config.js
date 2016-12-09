@@ -12,8 +12,8 @@ import cssnext from 'postcss-cssnext'
 import cssnano from 'cssnano'
 
 export default {
-  entry: 'src/index.js',
-  dest: 'dist/index.min.js',
+  entry: 'src/app.js',
+  dest: 'dist/app.min.js',
   format: 'iife',
   sourceMap: 'inline',
   plugins: [
