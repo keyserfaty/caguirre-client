@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "dev:start": "npm-run-all --parallel dev:browser-sync dev:rollup",
     "dev:browser-sync": "browser-sync start --server 'dist' --files 'dist'",
     "dev:rollup": "rollup -c --watch",
