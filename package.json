@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel dev:browser-sync dev:rollup",
+    "start": "nodemon app.js",
+    "dev:start": "npm-run-all --parallel dev:browser-sync dev:rollup",
     "dev:browser-sync": "browser-sync start --server 'dist' --files 'dist'",
     "dev:rollup": "rollup -c --watch",
     "prod:build": "NODE_ENV=production rollup -c"
