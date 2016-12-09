@@ -3,7 +3,7 @@ import h from 'vhtml'
 import PostContainer from './views/Post/PostContainer'
 import PostsListsContainer from './views/PostsList/PostsListsContainer'
 
-import { data } from './async'
+import data from './async'
 import { redirect } from './helpers'
 
 const routes = {
