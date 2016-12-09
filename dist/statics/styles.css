@@ -3,6 +3,11 @@ body {
     margin-bottom: 150px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /* Header */
 header {
     border-top: 6px solid #4894FF;
@@ -109,6 +114,7 @@ aside {
 
 aside .top {
     background-image: url('images/top.svg');
+    cursor: pointer;
 }
 
 aside .menu {
