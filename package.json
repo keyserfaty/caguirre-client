@@ -7,7 +7,7 @@
     "dev:start": "npm-run-all --parallel dev:browser-sync dev:rollup",
     "dev:browser-sync": "browser-sync start --server 'dist' --files 'dist'",
     "dev:rollup": "rollup -c --watch",
-    "prod:build": "NODE_ENV=production rollup -c"
+    "build": "NODE_ENV=production rollup -c"
   },
   "author": "keyserfaty <keserfaty@gmail.com>",
   "dependencies": {
