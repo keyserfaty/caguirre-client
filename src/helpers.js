@@ -3,12 +3,12 @@ export const splitContent = content => content.split('\n')
 export const redirect = (root, routes) => {
   const route = location.hash.slice(2)
 
-  if (route.includes('post')) {
-    root.innerHTML = routes.post
+  if (route.includes('post') && route !== 'posts') {
+    root.innerHTML = routes.post()
   }
 
   if (route.includes('posts')) {
-    root.innerHTML = routes.posts
+    root.innerHTML = routes.posts()
   }
 }
 
