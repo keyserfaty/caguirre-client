@@ -113,15 +113,16 @@ aside {
 
 aside .top {
     background-image: url('images/top.svg');
-    cursor: pointer;
+    background-size: 25px;
 }
 
 aside .menu {
     background-image: url('images/menu.svg');
+    background-size: 67px;
 }
 
 aside .top, aside .menu {
     height: 62px;
-    background-size: 25px;
     background-repeat: no-repeat;
+    cursor: pointer;
 }

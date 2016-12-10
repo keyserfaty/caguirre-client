@@ -1,5 +1,3 @@
-export const splitContent = content => content.split('\n')
-
 export const redirect = (root, routes) => { //* This handling is better but could be more generic
   const route = location.hash.length ? location.hash.slice(2) : ''
 

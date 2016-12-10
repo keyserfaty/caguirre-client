@@ -1,5 +1,4 @@
 import h from 'vhtml'
-import { splitContent } from '../../helpers'
 
 const Post = props => {
   const { content, title } = props.data
