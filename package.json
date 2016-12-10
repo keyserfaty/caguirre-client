@@ -12,12 +12,10 @@
   "author": "keyserfaty <keserfaty@gmail.com>",
   "dependencies": {
     "express": "^4.14.0",
-    "raw-cookies": "^1.0.1",
-    "rollup": "^0.36.4",
-    "socket.io-client": "^1.5.1",
     "vhtml": "2.0.0"
   },
   "devDependencies": {
+    "rollup": "^0.36.4",
     "babel-cli": "^6.18.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-preset-es2015-rollup": "^1.2.0",
