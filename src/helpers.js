@@ -1,14 +1,20 @@
+import data from './async'
+
 export const splitContent = content => content.split('\n')
 
-export const redirect = (root, routes) => {
-  const route = location.hash.slice(2)
+export const redirect = (root, routes) => { //* This handling is better but could be more generic
+  const route = location.hash.length ? location.hash.slice(2) : ''
+
+  if (route === '') {
+    root.innerHTML = routes['/posts']()
+  }
 
   if (route.includes('post') && route !== 'posts') {
-    root.innerHTML = routes.post()
+    root.innerHTML = routes['/post']()
   }
 
   if (route.includes('posts')) {
-    root.innerHTML = routes.posts()
+    root.innerHTML = routes['/posts']()
   }
 }
 

@@ -7,26 +7,17 @@ import data from './async'
 import { redirect } from './helpers'
 
 const routes = {
-  'posts': () => <PostsListsContainer data={data} />,
-  'post': () => <PostContainer data={data} /> //* TODO: this needs to handle dynamic routes otherwise it will display always the same route
+  '/': () => <PostsListsContainer data={data} />,
+  '/posts': () => <PostsListsContainer data={data} />,
+  '/post': () => <PostContainer data={data} />
 }
 
 const root = document.querySelector('.root')
 
-if (location.hash === '') {
-  root.innerHTML = routes.posts()
-} else {
+window.addEventListener('load', () =>
   redirect(root, routes)
-}
+)
 
-window.addEventListener('hashchange', function () {
-  const route = location.hash.slice(2)
-
-  if (route.includes('post') && route !== 'posts') {
-    root.innerHTML = routes.post()
-  }
-
-  if (route.includes('posts')) {
-    root.innerHTML = routes.posts()
-  }
-})
+window.addEventListener('hashchange', () =>
+  redirect(root, routes)
+)
