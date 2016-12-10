@@ -5,21 +5,20 @@ import Aside from '../../common/Aside'
 
 import { readBarWidth } from '../../helpers'
 
-let header
-let d
-
-window.addEventListener('load', () => {
-  d = document
-  header = d.querySelector('header')
-})
-
 window.addEventListener('scroll', () => {
-  const fullHeight = d.body.scrollHeight - d.body.clientHeight
-  const scrollPosition = window.pageYOffset
-  header.setAttribute('style', 'width: ' + readBarWidth(scrollPosition, fullHeight) + '%')
+  const d = document
+  const header = d.querySelector('header')
+
+  const route = location.hash.length ? location.hash.slice(2) : '' //* This is ugly
+  if (route !== 'posts') {
+    const fullHeight = d.body.scrollHeight - d.body.clientHeight
+    const scrollPosition = window.pageYOffset
+
+    header.setAttribute('style', 'width: ' + readBarWidth(scrollPosition, fullHeight) + '%')
+  }
 })
 
-const Container = props => {
+const PostContainer = props => {
   const route = location.hash.split('/')[2]
   const data = props.data.filter(file => file.fileName === '/' + route)[0]
 
@@ -35,4 +34,4 @@ const Container = props => {
   )
 }
 
-export default Container
+export default PostContainer
