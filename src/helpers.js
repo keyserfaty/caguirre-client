@@ -1,5 +1,3 @@
-import data from './async'
-
 export const splitContent = content => content.split('\n')
 
 export const redirect = (root, routes) => { //* This handling is better but could be more generic
