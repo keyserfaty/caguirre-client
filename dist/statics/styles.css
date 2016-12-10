@@ -125,3 +125,55 @@ aside .top, aside .menu {
     background-repeat: no-repeat;
     cursor: pointer;
 }
+
+/* Media Queries */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    .list {
+        margin-left: 50px !important;
+    }
+
+    aside {
+        width: 50px;
+    }
+
+    aside .top {
+        background-size: 45px;
+    }
+
+    aside .menu {
+        background-size: 113px;
+    }
+
+    footer {
+        padding-left: 50px;
+        font-size: 28px;
+    }
+
+    article {
+        margin-left: 50px;
+    }
+
+    article h1 {
+        font-size: 61.5px;
+        line-height: 70px;
+    }
+
+    article p {
+        line-height: 52px;
+        font-size: 35px;
+    }
+
+    .list h1 {
+        font-size: 61.5px;
+        line-height: 70px;
+    }
+
+    .list .source {
+        font-size: 18px;
+    }
+
+}
