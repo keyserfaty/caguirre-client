@@ -15,7 +15,7 @@ const PostListsContainer = props => {
                   {post.title}
                 </h1>
               </a>
-              <span class="source">La Nación</span>
+              <span class="source"><a href={`http://www.lanacion.com${post.fileName}`}>La Nación</a></span>
             </div>
           )) }
         </span>
