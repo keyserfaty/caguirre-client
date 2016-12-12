@@ -5,6 +5,7 @@ import postcss from 'rollup-plugin-postcss'
 import html from 'rollup-plugin-html'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
+import json from 'rollup-plugin-json';
 
 import simplevars from 'postcss-simple-vars'
 import nested from 'postcss-nested'
@@ -35,6 +36,10 @@ export default {
     commonjs(),
     html({
       include: '**/*.html'
+    }),
+    json({
+      include: 'src/**',
+      exclude: [ 'node_modules/**' ]
     }),
     babel({
       exclude: 'node_modules/**'

@@ -4,10 +4,10 @@ import * as events from './events'
 import PostContainer from './views/Post/PostContainer'
 import PostsListsContainer from './views/PostsList/PostsListsContainer'
 
-import data from './async'
+import data from './content.json'
 
 export const routes = {
-  '/': () => <PostsListsContainer data={data} />,
-  '/posts': () => <PostsListsContainer data={data} />,
-  '/post': () => <PostContainer data={data} />
+  '/': () => <PostsListsContainer data={data.content} />,
+  '/posts': () => <PostsListsContainer data={data.content} />,
+  '/post': () => <PostContainer data={data.content} />
 }
