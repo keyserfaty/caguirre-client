@@ -16,6 +16,7 @@ export default {
   dest: 'dist/app.min.js',
   format: 'iife',
   sourceMap: 'inline',
+  moduleName: 'caguirre',
   plugins: [
     postcss({
       plugins: [
