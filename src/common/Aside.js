@@ -1,13 +1,15 @@
 import h from 'vhtml'
 
+let top
+
 window.addEventListener('load', () => {
   const d = document
-  const top = d.querySelector('.top') // horrible bug here
+  top = d.querySelector('.top')
 })
 
-top.onclick = () => { // horrible bug here
+top.addEventListener('click', () => {
   window.scrollTo(0, 0)
-}
+})
 
 const Aside = prop => (
   <aside>
