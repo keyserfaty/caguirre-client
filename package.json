@@ -11,7 +11,10 @@
   },
   "author": "keyserfaty <keserfaty@gmail.com>",
   "dependencies": {
+    "cssnano": "^3.9.1",
     "express": "^4.14.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-json": "^2.1.0",
     "vhtml": "2.0.0"
   },
   "devDependencies": {
