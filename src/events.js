@@ -1,5 +1,4 @@
-import { readBarWidth, redirect } from './helpers'
-import { routes } from './app'
+import { readBarWidth } from './helpers'
 
 const d = document
 
@@ -23,14 +22,4 @@ window.addEventListener('scroll', () => {
   const scrollPosition = window.pageYOffset
 
   header.setAttribute('style', 'width: ' + readBarWidth(scrollPosition, fullHeight) + '%')
-}, false)
-
-window.addEventListener('load', () => {
-  const root = d.querySelector('.root')
-  redirect(root, routes)
-}, false)
-
-window.addEventListener('hashchange', (e) => {
-  const root = d.querySelector('.root')
-  redirect(root, routes)
 }, false)

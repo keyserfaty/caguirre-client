@@ -1,13 +1,16 @@
 import h from 'vhtml'
 import * as events from './events'
+import * as router from './router'
 
+import Layout from './views/Layout'
 import PostContainer from './views/Post/PostContainer'
 import PostsListsContainer from './views/PostsList/PostsListsContainer'
 
 import data from './content.json'
 
 export const routes = {
-  '/': () => <PostsListsContainer data={data.content} />,
-  '/posts': () => <PostsListsContainer data={data.content} />,
-  '/post': () => <PostContainer data={data.content} />
+  layout: () => <Layout data={data.content} />,
+  indexRedirect: () => <PostsListsContainer data={data.content} />,
+  'posts': () => <PostsListsContainer data={data.content} />,
+  'post': () => <PostContainer data={data.content} />
 }
