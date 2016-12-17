@@ -4,6 +4,9 @@ var browserify = require('browserify')
 var watchify = require('watchify')
 var babelify = require('babelify')
 
+var livereload = require('gulp-livereload')
+var connect = require('gulp-connect')
+
 var source = require('vinyl-source-stream')
 var buffer = require('vinyl-buffer')
 var merge = require('utils-merge')
@@ -55,7 +58,16 @@ gulp.task('watchify', function () {
   var bundler = watchify(browserify(paths.entry, args)).transform(babelify, { /* opts */ })
   bundleJs(bundler)
 
+  connect.server({
+    port: 8000,
+    root: 'dist'
+  })
+
+  livereload.listen(35729)
+
   bundler.on('update', function () {
+    console.log('update event')
+
     bundleJs(bundler)
   })
 })
