@@ -9,7 +9,8 @@ d.addEventListener('click', (e) => {
   }
 
   if (e.target.classList.contains('menu')) {
-    // console.log('menu clicked!')
+    const menu = d.querySelector('.menu')
+    menu.classList.toggle('toggle-menu')
   }
 }, false)
 
