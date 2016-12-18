@@ -2,8 +2,7 @@ import h from 'vhtml'
 
 //* Helper functions
 const ifElse = (i, e) =>
-  cond =>
-    cond ? i : e
+  cond => cond ? i : e
 
 const layoutWrapper = (layout, component) =>
   ifElse(h(layout(), null, h(component())), component())
@@ -17,7 +16,7 @@ const redirect = (root, routes) => {
 
   const isIndex = (i, e) => ifElse(i, e)(route === '')
 
-  //* Handle component to be attached to the body/root component
+  //* Handle component to be attached to the root component
   root.innerHTML = layoutWrapper(
     routes.layout,
     isIndex(
