@@ -6,7 +6,6 @@ import Aside from '../../common/Aside'
 const PostContainer = props => {
   const route = location.hash.split('/')[2]
   const data = props.data.filter(file => file.fileName === '/' + route)[0]
-  console.log(props)
   return (
     <span>
     <header />

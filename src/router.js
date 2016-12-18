@@ -1,15 +1,15 @@
-import { routes } from './app'
+import h from 'vhtml'
 
-const d = document
-
+//* Helper functions
 const ifElse = (i, e) =>
   cond =>
     cond ? i : e
 
 const layoutWrapper = (layout, component) =>
-  ifElse(layout(component), component())
+  ifElse(h(layout(), null, h(component())), component())
 
-export const redirect = (root, routes) => {
+//* Handle content to be displayed in the view
+const redirect = (root, routes) => {
   const route = location.hash.split('/')[1]
 
   const hasLayout = routes.hasOwnProperty('layout') // Did user defined a layout on router?
@@ -17,6 +17,7 @@ export const redirect = (root, routes) => {
 
   const isIndex = (i, e) => ifElse(i, e)(route === '')
 
+  //* Handle component to be attached to the body/root component
   root.innerHTML = layoutWrapper(
     routes.layout,
     isIndex(
@@ -26,12 +27,17 @@ export const redirect = (root, routes) => {
   )(hasLayout)
 }
 
-window.addEventListener('load', () => {
-  const root = d.querySelector('.root')
-  redirect(root, routes)
-}, false)
+/**
+ * Router fn
+ * @param root: DOM node: element to append components to
+ * @param routes: Object: routes object
+ */
+export const router = (root, routes) => {
+  window.addEventListener('load', () => {
+    redirect(root, routes)
+  }, false)
 
-window.addEventListener('hashchange', (e) => {
-  const root = d.querySelector('.root')
-  redirect(root, routes)
-}, false)
+  window.addEventListener('hashchange', () => {
+    redirect(root, routes)
+  }, false)
+}

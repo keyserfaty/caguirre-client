@@ -8,7 +8,6 @@ const Layout = props => {
     <span>
       <section class="container">
         <Aside data="" />
-        { props.children }
       </section>
       <Footer data=""/>
     </span>
