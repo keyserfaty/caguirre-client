@@ -2,22 +2,28 @@ import { routes } from './app'
 
 const d = document
 
+const ifElse = (i, e) =>
+  cond =>
+    cond ? i : e
+
+const layoutWrapper = (layout, component) =>
+  ifElse(layout(component), component())
+
 export const redirect = (root, routes) => {
   const route = location.hash.split('/')[1]
 
-  //* Handle redirect to index
-  if (route === '' && routes.hasOwnProperty('indexRedirect')) {
-    root.innerHTML = routes.indexRedirect()
-    return
-  }
+  const hasLayout = routes.hasOwnProperty('layout') // Did user defined a layout on router?
+  const hasIndexRedirect = routes.hasOwnProperty('indexRedirect') // Did user defined an indexRedirect on router?
 
-  //* Handle routing if there is a layout present
-  if (routes.hasOwnProperty('layout')) {
-    root.innerHTML = routes.layout(routes[route])
-    return
-  }
+  const isIndex = (i, e) => ifElse(i, e)(route === '')
 
-  root.innerHTML = routes[route]()
+  root.innerHTML = layoutWrapper(
+    routes.layout,
+    isIndex(
+      ifElse(routes.indexRedirect, '')(hasIndexRedirect),
+      routes[route]
+    )
+  )(hasLayout)
 }
 
 window.addEventListener('load', () => {
