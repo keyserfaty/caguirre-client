@@ -8,13 +8,13 @@ const PostContainer = props => {
   const data = props.data.filter(file => file.fileName === '/' + route)[0]
   return (
     <span>
-    <header />
-    <section class="container">
-      <Aside data=""/>
-      <Post data={data} />
-    </section>
-    <Footer data=""/>
-  </span>
+      <header />
+      <section class="container">
+        <Aside data=""/>
+        <Post data={data} />
+      </section>
+      <Footer data=""/>
+    </span>
   )
 }
 

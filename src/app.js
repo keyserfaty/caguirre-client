@@ -10,11 +10,22 @@ import PostsListsContainer from './views/PostsList/PostsListsContainer'
 import data from './content.json'
 
 router(
-  document.querySelector('.root'),
   {
-    layout: () => <Layout data={data.content} />,
-    indexRedirect: () => <PostsListsContainer data={data.content} />,
-    'posts': () => <PostsListsContainer data={data.content} />,
-    'post': () => <PostContainer data={data.content} />
-  }
+    indexRedirect: () => (
+      <Layout>
+        <PostsListsContainer data={data.content} />
+      </Layout>
+    ),
+    'posts': () => (
+      <Layout>
+        <PostsListsContainer data={data.content} />
+      </Layout>
+    ),
+    'post': () => (
+      <Layout>
+        <PostContainer data={data.content} />
+      </Layout>
+    )
+  },
+  document.querySelector('.root')
 )
