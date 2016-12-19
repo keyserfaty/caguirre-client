@@ -12,9 +12,9 @@ const redirect = (routes, root) => {
   //* Handle which component will be attached to the root component
   root.innerHTML =
     isIndex(
-      ifElse(routes.indexRedirect(), '')(hasIndexRedirect),
+      ifElse(routes[routes.indexRedirect], '')(hasIndexRedirect),
       routes[route]
-    )
+    )()
 }
 
 /**

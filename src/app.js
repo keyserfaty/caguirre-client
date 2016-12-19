@@ -11,11 +11,7 @@ import data from './content.json'
 
 router(
   {
-    indexRedirect: () => (
-      <Layout>
-        <PostsListsContainer data={data.content} />
-      </Layout>
-    ),
+    indexRedirect: 'posts',
     'posts': () => (
       <Layout>
         <PostsListsContainer data={data.content} />
