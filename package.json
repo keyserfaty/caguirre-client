@@ -10,7 +10,8 @@
   "author": "keyserfaty <keserfaty@gmail.com>",
   "dependencies": {
     "express": "^4.14.0",
-    "vhtml": "^2.1.0"
+    "vhtml": "^2.1.0",
+    "vrouter": "^2.0.1"
   },
   "devDependencies": {
     "babel-plugin-transform-react-jsx": "^6.8.0",

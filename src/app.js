@@ -1,7 +1,7 @@
 import h from 'vhtml'
 import * as events from './events'
 
-import { router } from './router'
+import router from 'vrouter'
 
 import Layout from './views/Layout'
 import PostContainer from './views/Post/PostContainer'
