@@ -7,7 +7,8 @@ import Layout from './views/Layout'
 import PostContainer from './views/Post/PostContainer'
 import PostsListsContainer from './views/PostsList/PostsListsContainer'
 
-import data from './content.json'
+let data = document.querySelector('#content')
+data = JSON.parse(data.innerHTML.split('`')[1])
 
 router(
   {

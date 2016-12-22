@@ -11,7 +11,7 @@ d.addEventListener('click', (e) => {
     // const menu = d.querySelector('.menu')
     // menu.classList.toggle('toggle-menu')
   }
-}, false)
+}, true)
 
 window.addEventListener('scroll', () => {
   const header = d.querySelector('header')
@@ -22,4 +22,4 @@ window.addEventListener('scroll', () => {
   const scrollPosition = window.pageYOffset
 
   header.setAttribute('style', 'width: ' + readBarWidth(scrollPosition, fullHeight) + '%')
-}, false)
+}, true)
